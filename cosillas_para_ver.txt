@@ -1,0 +1,30 @@
+/*
+taskIndex = 0
+taskSubIndex = 0
+modificar SUBTITLE = 'Puro hueso'
+
+setTasks((prevTasks) => prevTask.map((task, index) => {
+  if(index !== taskIndex) return task
+
+  return {
+    ...task,
+    subtasks: task.subTasks.map((subtask, _index) => {
+      if(_index !== taskSubIndex) return subtask
+
+      return {
+        ...subtask,
+        subtitle: SUBTITLE
+      }
+    })
+  }
+}))
+
+setTasks((prevTasks) => produce(prevTasks, (draftTasks) => {
+  const task = draftTasks[taskIndex]
+  const subtask = task[taskSubIndex]
+
+  subtask.title = SUBTITLE
+}))
+
+
+*/
